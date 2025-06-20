@@ -7,7 +7,7 @@ pipeline {
           [key: 'ref', value: '$.ref']
          ],
          causeString: 'Triggered on $ref',
-         token: 'myToken12345678',
+         token: 'myToken12345678Chayanica',
          tokenCredentialId: '',
          printContributedVariables: true,
          printPostContent: true,
