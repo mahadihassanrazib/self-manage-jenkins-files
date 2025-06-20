@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World from self-hosted Jenkins'
+                echo "This is a test project for ${params.test_project_branch} branch"
+            }
+        }
+        stage('clone repo') {
+            steps {
+                git branch: "${params.test_project_branch}", url: 'https://github.com/mahadihassanrazib/full-stack-crud-project-with-react-node-mysql.git'
+
+                script {
+                    sh "ls -lah"
+                    sh "echo branch is: ${params.test_project_branch}"
+                }
+            }
+        }
+    }
+}
