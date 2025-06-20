@@ -22,16 +22,16 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World from self-hosted Jenkins'
-                echo "This is a test project for ${params.test_project_branch} branch"
+                echo "This is a test project for development branch"
             }
         }
         stage('clone repo') {
             steps {
-                git branch: "${params.test_project_branch}", url: 'https://github.com/mahadihassanrazib/full-stack-crud-project-with-react-node-mysql.git'
+                git branch: "development", url: 'https://github.com/mahadihassanrazib/full-stack-crud-project-with-react-node-mysql.git'
 
                 script {
                     sh "ls -lah"
-                    sh "echo branch is: ${params.test_project_branch}"
+                    sh "echo branch is: development"
                 }
             }
         }
