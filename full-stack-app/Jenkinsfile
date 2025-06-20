@@ -1,6 +1,23 @@
 pipeline {
     agent any
 
+    triggers {
+        GenericTrigger(
+         genericVariables: [
+          [key: 'refName', value: '$.refUpdate.refName']
+         ],
+         causeString: 'Triggered on $refName',
+         token: 'myToken12345678',
+         tokenCredentialId: '',
+         printContributedVariables: true,
+         printPostContent: true,
+         silentResponse: false,
+         shouldNotFlatten: false,
+         regexpFilterText: '$refName',
+         regexpFilterExpression: '^(development)\$'
+        )
+    }
+
     stages {
         stage('Hello') {
             steps {
