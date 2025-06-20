@@ -14,7 +14,7 @@ pipeline {
          silentResponse: false,
          shouldNotFlatten: false,
          regexpFilterText: '$refName',
-         regexpFilterExpression: '^(development)\$'
+         regexpFilterExpression: '^(refs/heads/development)\$'
         )
     }
 
