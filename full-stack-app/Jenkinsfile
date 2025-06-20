@@ -4,16 +4,16 @@ pipeline {
     triggers {
         GenericTrigger(
          genericVariables: [
-          [key: 'refName', value: '$.refUpdate.refName']
+          [key: 'ref', value: '$.ref']
          ],
-         causeString: 'Triggered on $refName',
+         causeString: 'Triggered on $ref',
          token: 'myToken12345678',
          tokenCredentialId: '',
          printContributedVariables: true,
          printPostContent: true,
          silentResponse: false,
          shouldNotFlatten: false,
-         regexpFilterText: '$refName',
+         regexpFilterText: '$ref',
          regexpFilterExpression: '^(refs/heads/development)\$'
         )
     }
